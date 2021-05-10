@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Notes</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="topbar">
+            <h1>Notes</h1>
+            <button class="topbar_button" @click="novaNota">Nova Nota</button>
+        </div>
+        <div class="notes-container">
+
+            <div v-for="(nota, index) in notas" class="note">
+                <div class="note-bar">
+                    <i class="fas" :class="nota.editor ? 'fa-save' : 'fa-edit'" @click="toggleEditor(index)"></i>
+                    <i class="fas fa-trash" @click="deletaNota(index)"></i>
+                </div>
+                <div  v-if="!nota.editor" class="note-text"> {{nota.text}}</div>
+                <textarea v-else v-model="nota.text"  class="note-editor"></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

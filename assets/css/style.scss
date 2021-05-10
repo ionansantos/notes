@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#app{
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    .topbar{
+        padding: 1rem;
+        background-color: #4b6;
+        display: flex;
+        justify-content: space-between; // ou flex-end se quiser por apenas o botao no canto
+        h1{
+            color: white;
+            margin-left: 2rem;
+        }
+        .topbar_button{
+            margin-right: 2rem;
+            padding: .50rem 1rem;
+            border-radius: .30rem; 
+            cursor: pointer;
+            align-items: center;
+            background-color: #4b6;
+            color: white;
+            border: 1px solid white;
+            transition: .3s;
+            &:hover{
+                color: #4b6;
+                background-color: white;
+                border: 1px solid#4b6;
+                transform: translateY(6px);
+            }
+        }
+        
+    }
+    .notes-container{
+        padding: 2rem;
+        // flex: 1;
+        display: flex;
+        flex-wrap: wrap; // ajuda a quebra as colunas para os card se encaixarem
+        // justify-content: flex-start;
+        gap: 1rem;
+    }
+    .note{
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(217, 223, 222);
+        box-shadow: 0 1px 8px   rgba(0, 0, 0, 0.295);
+  
+        
+
+        .note-bar{
+            padding: 1rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            cursor: pointer;
+            background-color: #4b6;
+
+            .fas{
+                font-size: 1.2rem;
+                transition: .3s;
+
+                &:hover{
+                    color:white;
+                }
+            }
+        }
+        .note-text {
+            padding: 1rem;
+            flex: 1;
+            
+            background-color: white;
+            color: rgba(0, 0, 0, 0.815);
+            word-wrap: break-word        // o texto não passará do bloco de nota
+            
+
+        }
+        .note-editor{
+            flex: 1;
+            resize: none;
+            padding: 0.5rem;
+            outline: none;
+            border: none;
+        }
+    }
+}
